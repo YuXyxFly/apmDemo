@@ -1,0 +1,379 @@
+2023-02-22 16:39:49.851  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 7520 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:39:49.906  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:39:51.679  WARN - o.s.boot.diagnostics.FailureAnalyzers    - [] : FailureAnalyzers [org.springframework.boot.autoconfigure.jooq.NoDslContextBeanFailureAnalyzer,org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer,org.springframework.boot.autoconfigure.jdbc.DataSourceBeanCreationFailureAnalyzer,org.springframework.boot.autoconfigure.r2dbc.ConnectionFactoryBeanCreationFailureAnalyzer] implement BeanFactoryAware or EnvironmentAware. Support for these interfaces on FailureAnalyzers is deprecated, and will be removed in a future release. Instead provide a constructor that accepts BeanFactory or Environment parameters.
+2023-02-22 16:39:51.734 ERROR - o.s.b.d.LoggingFailureAnalysisReporter   - [] : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
+
+The following method did not exist:
+
+    org.springframework.beans.factory.config.ConfigurableListableBeanFactory.findAnnotationOnBean(Ljava/lang/String;Ljava/lang/Class;Z)Ljava/lang/annotation/Annotation;
+
+The calling method's class, org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector, was loaded from the following location:
+
+    jar:file:/G:/apache-maven-3.3.9/repository/org/springframework/boot/spring-boot/2.7.1/spring-boot-2.7.1.jar!/org/springframework/boot/sql/init/dependency/AnnotationDependsOnDatabaseInitializationDetector.class
+
+The called method's class, org.springframework.beans.factory.config.ConfigurableListableBeanFactory, is available from the following locations:
+
+    jar:file:/G:/apache-maven-3.3.9/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar!/org/springframework/beans/factory/config/ConfigurableListableBeanFactory.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    org.springframework.beans.factory.config.ConfigurableListableBeanFactory: file:/G:/apache-maven-3.3.9/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector and org.springframework.beans.factory.config.ConfigurableListableBeanFactory
+
+2023-02-22 16:40:10.883  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 12896 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:40:10.888  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:40:12.067  WARN - o.s.boot.diagnostics.FailureAnalyzers    - [] : FailureAnalyzers [org.springframework.boot.autoconfigure.jooq.NoDslContextBeanFailureAnalyzer,org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer,org.springframework.boot.autoconfigure.jdbc.DataSourceBeanCreationFailureAnalyzer,org.springframework.boot.autoconfigure.r2dbc.ConnectionFactoryBeanCreationFailureAnalyzer] implement BeanFactoryAware or EnvironmentAware. Support for these interfaces on FailureAnalyzers is deprecated, and will be removed in a future release. Instead provide a constructor that accepts BeanFactory or Environment parameters.
+2023-02-22 16:40:12.085 ERROR - o.s.b.d.LoggingFailureAnalysisReporter   - [] : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
+
+The following method did not exist:
+
+    org.springframework.beans.factory.config.ConfigurableListableBeanFactory.findAnnotationOnBean(Ljava/lang/String;Ljava/lang/Class;Z)Ljava/lang/annotation/Annotation;
+
+The calling method's class, org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector, was loaded from the following location:
+
+    jar:file:/G:/apache-maven-3.3.9/repository/org/springframework/boot/spring-boot/2.7.1/spring-boot-2.7.1.jar!/org/springframework/boot/sql/init/dependency/AnnotationDependsOnDatabaseInitializationDetector.class
+
+The called method's class, org.springframework.beans.factory.config.ConfigurableListableBeanFactory, is available from the following locations:
+
+    jar:file:/G:/apache-maven-3.3.9/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar!/org/springframework/beans/factory/config/ConfigurableListableBeanFactory.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    org.springframework.beans.factory.config.ConfigurableListableBeanFactory: file:/G:/apache-maven-3.3.9/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector and org.springframework.beans.factory.config.ConfigurableListableBeanFactory
+
+2023-02-22 16:45:22.865  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 2908 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:45:22.877  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:45:24.212  WARN - ConfigServletWebServerApplicationContext - [] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: cn.fly.testController [Xlint:invalidAbsoluteTypeName]
+2023-02-22 16:45:24.224  INFO - ConditionEvaluationReportLoggingListener - [] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-22 16:45:24.301 ERROR - o.s.boot.SpringApplication               - [] : Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: cn.fly.testController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at cn.fly.LogApplication.main(LogApplication.java:25)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: cn.fly.testController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: cn.fly.testController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:255)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 15 common frames omitted
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: cn.fly.testController [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:341)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 37 common frames omitted
+2023-02-22 16:46:48.016  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 1444 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:46:48.024  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:46:49.932  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 16:46:49.945  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:46:49.946  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 16:46:49.946  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 16:46:50.172  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 16:46:50.172  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2047 ms
+2023-02-22 16:46:50.847  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 16:46:50.856  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 16:46:52.005  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:46:52.031  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 16:46:52.043  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.77 seconds (JVM running for 5.702)
+2023-02-22 16:49:43.282  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22 16:49:43.283  INFO - o.s.web.servlet.DispatcherServlet        - [] : Initializing Servlet 'dispatcherServlet'
+2023-02-22 16:49:43.284  INFO - o.s.web.servlet.DispatcherServlet        - [] : Completed initialization in 1 ms
+2023-02-22 16:49:43.509  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Starting...
+2023-02-22 16:49:43.791  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Start completed.
+2023-02-22 16:49:43.814 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==>  Preparing: SELECT Table_CataLog,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ENGINE,VERSION,ROW_FORMAT,CREATE_TIME,TABLE_COMMENT FROM information_schema.TABLES WHERE TABLE_NAME=?
+2023-02-22 16:49:43.858 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==> Parameters: hdjy_grdjb(String)
+2023-02-22 16:49:43.926 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : <==      Total: 5
+2023-02-22 16:50:12.870  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown initiated...
+2023-02-22 16:50:12.878  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown completed.
+2023-02-22 16:50:19.246  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 10484 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:50:19.256  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:50:21.162  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 16:50:21.174  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:50:21.175  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 16:50:21.176  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 16:50:21.375  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 16:50:21.375  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2019 ms
+2023-02-22 16:50:21.959  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 16:50:21.969  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 16:50:23.124  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:50:23.151  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 16:50:23.161  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.651 seconds (JVM running for 5.589)
+2023-02-22 16:50:27.771  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22 16:50:27.772  INFO - o.s.web.servlet.DispatcherServlet        - [] : Initializing Servlet 'dispatcherServlet'
+2023-02-22 16:50:27.773  INFO - o.s.web.servlet.DispatcherServlet        - [] : Completed initialization in 1 ms
+2023-02-22 16:50:28.083  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Starting...
+2023-02-22 16:50:28.465  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Start completed.
+2023-02-22 16:50:28.474 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==>  Preparing: SELECT Table_CataLog,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ENGINE,VERSION,ROW_FORMAT,CREATE_TIME,TABLE_COMMENT FROM information_schema.TABLES WHERE TABLE_NAME=?
+2023-02-22 16:50:28.521 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==> Parameters: hdjy_grdjb(String)
+2023-02-22 16:50:28.793 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : <==      Total: 5
+2023-02-22 16:57:47.120  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown initiated...
+2023-02-22 16:57:47.146  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown completed.
+2023-02-22 16:57:57.191  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 7108 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 16:57:57.195  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 16:57:59.153  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 16:57:59.166  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:57:59.167  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 16:57:59.167  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 16:57:59.406  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 16:57:59.406  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2116 ms
+2023-02-22 16:58:00.175  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 16:58:00.184  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 16:58:01.371  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 16:58:01.395  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 16:58:01.408  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.959 seconds (JVM running for 5.81)
+2023-02-22 17:00:15.920  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 8124 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 17:00:15.929  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 17:00:17.823  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 17:00:17.835  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:00:17.836  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 17:00:17.836  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 17:00:18.029  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 17:00:18.029  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 1993 ms
+2023-02-22 17:00:18.609  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 17:00:18.617  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 17:00:19.704  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:00:19.728  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 17:00:19.754  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.897 seconds (JVM running for 6.506)
+2023-02-22 17:00:22.668  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22 17:00:22.668  INFO - o.s.web.servlet.DispatcherServlet        - [] : Initializing Servlet 'dispatcherServlet'
+2023-02-22 17:00:22.669  INFO - o.s.web.servlet.DispatcherServlet        - [] : Completed initialization in 0 ms
+2023-02-22 17:00:23.809  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Starting...
+2023-02-22 17:00:25.717  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Start completed.
+2023-02-22 17:00:25.729 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==>  Preparing: SELECT Table_CataLog,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ENGINE,VERSION,ROW_FORMAT,CREATE_TIME,TABLE_COMMENT FROM information_schema.TABLES WHERE TABLE_NAME=?
+2023-02-22 17:00:25.805 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==> Parameters: hdjy_grdjb(String)
+2023-02-22 17:00:25.924 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : <==      Total: 5
+2023-02-22 17:01:52.399  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown initiated...
+2023-02-22 17:01:52.635  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown completed.
+2023-02-22 17:01:59.724  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 6876 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 17:01:59.735  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 17:02:01.608  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 17:02:01.621  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:02:01.622  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 17:02:01.622  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 17:02:01.822  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 17:02:01.822  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 1989 ms
+2023-02-22 17:02:02.413  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 17:02:02.421  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 17:02:03.537  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:02:03.585  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 17:02:03.597  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.614 seconds (JVM running for 5.696)
+2023-02-22 17:02:10.669  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22 17:02:10.670  INFO - o.s.web.servlet.DispatcherServlet        - [] : Initializing Servlet 'dispatcherServlet'
+2023-02-22 17:02:10.671  INFO - o.s.web.servlet.DispatcherServlet        - [] : Completed initialization in 1 ms
+2023-02-22 17:02:13.544  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Starting...
+2023-02-22 17:02:14.040  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Start completed.
+2023-02-22 17:02:14.055 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==>  Preparing: SELECT Table_CataLog,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ENGINE,VERSION,ROW_FORMAT,CREATE_TIME,TABLE_COMMENT FROM information_schema.TABLES WHERE TABLE_NAME=?
+2023-02-22 17:02:14.092 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==> Parameters: hdjy_grdjb(String)
+2023-02-22 17:02:14.146 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : <==      Total: 5
+2023-02-22 17:54:25.739  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown initiated...
+2023-02-22 17:54:25.744  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown completed.
+2023-02-22 17:54:51.895  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 7872 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 17:54:51.901  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 17:54:53.850  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 17:54:53.865  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:54:53.867  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 17:54:53.868  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 17:54:54.084  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 17:54:54.085  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2066 ms
+2023-02-22 17:54:54.197  WARN - ConfigServletWebServerApplicationContext - [] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logAspect': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logEventProducer' defined in file [C:\Users\Administrator\Desktop\log-demo\target\classes\cn\fly\logDemo\infoResolver\LogEventProducer.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2023-02-22 17:54:54.201  INFO - o.apache.catalina.core.StandardService   - [] : Stopping service [Tomcat]
+2023-02-22 17:54:54.221  INFO - ConditionEvaluationReportLoggingListener - [] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-22 17:54:54.262 ERROR - o.s.boot.SpringApplication               - [] : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logAspect': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logEventProducer' defined in file [C:\Users\Administrator\Desktop\log-demo\target\classes\cn\fly\logDemo\infoResolver\LogEventProducer.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at cn.fly.LogApplication.main(LogApplication.java:22)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logEventProducer' defined in file [C:\Users\Administrator\Desktop\log-demo\target\classes\cn\fly\logDemo\infoResolver\LogEventProducer.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326)
+	... 31 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at cn.fly.logDemo.infoResolver.LogEventProducer.<init>(LogEventProducer.java:23)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 33 common frames omitted
+2023-02-22 17:56:37.647  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 12816 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 17:56:37.657  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 17:56:39.629  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 17:56:39.641  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:56:39.642  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 17:56:39.643  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 17:56:39.850  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 17:56:39.850  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2077 ms
+2023-02-22 17:56:39.936  WARN - ConfigServletWebServerApplicationContext - [] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logEventProducer' defined in file [C:\Users\Administrator\Desktop\log-demo\target\classes\cn\fly\logDemo\infoResolver\LogEventProducer.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2023-02-22 17:56:39.940  INFO - o.apache.catalina.core.StandardService   - [] : Stopping service [Tomcat]
+2023-02-22 17:56:39.958  INFO - ConditionEvaluationReportLoggingListener - [] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-22 17:56:39.999 ERROR - o.s.boot.SpringApplication               - [] : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'logEventProducer' defined in file [C:\Users\Administrator\Desktop\log-demo\target\classes\cn\fly\logDemo\infoResolver\LogEventProducer.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at cn.fly.LogApplication.main(LogApplication.java:22)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.fly.logDemo.infoResolver.LogEventProducer]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326)
+	... 17 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at cn.fly.logDemo.infoResolver.LogEventProducer.<init>(LogEventProducer.java:23)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 19 common frames omitted
+2023-02-22 17:57:53.146  INFO - cn.fly.LogApplication                    - [] : Starting LogApplication using Java 1.8.0_65 on YR023-夏宇鑫 with PID 8292 (C:\Users\Administrator\Desktop\log-demo\target\classes started by Administrator in C:\Users\Administrator\Desktop\log-demo)
+2023-02-22 17:57:53.151  INFO - cn.fly.LogApplication                    - [] : No active profile set, falling back to 1 default profile: "default"
+2023-02-22 17:57:55.184  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat initialized with port(s): 9999 (http)
+2023-02-22 17:57:55.196  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Initializing ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:57:55.197  INFO - o.apache.catalina.core.StandardService   - [] : Starting service [Tomcat]
+2023-02-22 17:57:55.197  INFO - org.apache.catalina.core.StandardEngine  - [] : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-02-22 17:57:55.396  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring embedded WebApplicationContext
+2023-02-22 17:57:55.397  INFO - w.s.c.ServletWebServerApplicationContext - [] : Root WebApplicationContext: initialization completed in 2136 ms
+2023-02-22 17:57:55.507  INFO - cn.fly.logDemo.LogEventThread            - [] : Disruptor: initialization completed
+2023-02-22 17:57:56.015  WARN - c.b.m.core.metadata.TableInfoHelper      - [] : Can not find table primary key in Class: "cn.fly.logDemo.infoResolver.model.mysql.MysqlTables".
+2023-02-22 17:57:56.025  WARN - c.b.m.core.injector.DefaultSqlInjector   - [] : class cn.fly.logDemo.infoResolver.model.mysql.MysqlTables ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-02-22 17:57:56.962  INFO - o.a.coyote.http11.Http11NioProtocol      - [] : Starting ProtocolHandler ["http-nio-9999"]
+2023-02-22 17:57:56.986  INFO - o.s.b.w.embedded.tomcat.TomcatWebServer  - [] : Tomcat started on port(s): 9999 (http) with context path ''
+2023-02-22 17:57:56.998  INFO - cn.fly.LogApplication                    - [] : Started LogApplication in 4.713 seconds (JVM running for 5.632)
+2023-02-22 17:58:05.802  INFO - o.a.c.c.C.[Tomcat].[localhost].[/]       - [] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22 17:58:05.803  INFO - o.s.web.servlet.DispatcherServlet        - [] : Initializing Servlet 'dispatcherServlet'
+2023-02-22 17:58:05.804  INFO - o.s.web.servlet.DispatcherServlet        - [] : Completed initialization in 1 ms
+2023-02-22 17:58:08.513  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Starting...
+2023-02-22 17:58:09.174  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Start completed.
+2023-02-22 17:58:09.184 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==>  Preparing: SELECT Table_CataLog,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ENGINE,VERSION,ROW_FORMAT,CREATE_TIME,TABLE_COMMENT FROM information_schema.TABLES WHERE TABLE_NAME=?
+2023-02-22 17:58:09.305 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : ==> Parameters: hdjy_grdjb(String)
+2023-02-22 17:58:09.411 DEBUG - c.f.l.i.dao.MysqlTableDao.selectList     - [] : <==      Total: 5
+2023-02-22 18:00:03.942  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown initiated...
+2023-02-22 18:00:03.956  INFO - com.zaxxer.hikari.HikariDataSource       - [] : HikariPool-1 - Shutdown completed.
