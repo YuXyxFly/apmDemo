@@ -60,6 +60,10 @@ public class PasswordTest {
         System.out.println(password16.matches(password)+ " 16");
     }
 
+    public static void main(String[] args) {
+        System.out.println("110101001003".substring(6, 9));
+    }
+
 }
 
 

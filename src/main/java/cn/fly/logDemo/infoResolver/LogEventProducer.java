@@ -2,6 +2,7 @@ package cn.fly.logDemo.infoResolver;
 
 import cn.fly.logDemo.LogEvent;
 import cn.fly.logDemo.LogEventThread;
+import cn.fly.logDemo.infoResolver.model.logTable.TranslatorCollect;
 import cn.fly.logDemo.utils.BasicClassesChecker;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lmax.disruptor.EventTranslatorOneArg;
@@ -24,17 +25,18 @@ public class LogEventProducer {
         this.ringBuffer = new LogEventThread().getDisruptor().getRingBuffer();
     }
 
-    private static final EventTranslatorOneArg<LogEvent, Object> TRANSLATOR = (event, sequence, req) -> event.generateInfo(req);
+    private static final EventTranslatorOneArg<LogEvent, TranslatorCollect> TRANSLATOR = (event, sequence, collect) -> event.generateInfo(collect);
 
     public boolean producer(ProceedingJoinPoint proceedingJoinPoint) {
         // 参数值
         Object[] args = proceedingJoinPoint.getArgs();
         Object req = null;
+        Object id = 0L;
         //Class<?>[] classes = new Class[args.length];
         for (int k = 0; k < args.length; k++) {
             if (!BasicClassesChecker.check(args[k].getClass())){
                 req = args[k];
-            }
+            }else id = args[k];
             //classes[k] = args[k].getClass();
         }
         //ParameterNameDiscoverer pnd = new DefaultParameterNameDiscoverer();
@@ -47,7 +49,7 @@ public class LogEventProducer {
         //for (int i = 0; i < parameterNames.length; i++) {
         //    paramMap.put(args[i], parameterNames[i]);
         //}
-        this.ringBuffer.publishEvent(TRANSLATOR, req);
+        this.ringBuffer.publishEvent(TRANSLATOR, new TranslatorCollect(req, (Long)id));
         return true;
     }
 

@@ -58,7 +58,7 @@ public class LogAspect {
         if (HttpMethod.PUT.matches(request.getMethod()) || HttpMethod.POST.matches(request.getMethod())) {
             SpringUtils.getBean(LogEventProducer.class).producer(proceedingJoinPoint);
         }
-        RequestInfoHandler.resolve(request);
+        //RequestInfoHandler.resolve(request);
         return proceedingJoinPoint.proceed();
     }
 }

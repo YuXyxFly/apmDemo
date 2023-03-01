@@ -2,7 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao">
 
-    <select id="selectTableInfo" resultType="cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns">
+    <select id="showTableInfo" resultType="cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns">
         show full columns from ${tableName}
+        <where>
+            <if test="Fields != null">
+                Field  in
+                  <foreach collection="Fields" separator="," open="(" close=")" item="item" index="index">
+                      #{item}
+                  </foreach>
+            </if>
+        </where>
     </select>
 </mapper>

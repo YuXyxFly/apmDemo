@@ -2,6 +2,7 @@ package cn.fly.logDemo;
 
 
 import cn.fly.logDemo.infoResolver.TraceIdHandler;
+import cn.fly.logDemo.infoResolver.model.logTable.TranslatorCollect;
 import cn.fly.logDemo.utils.DateUtils;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -23,6 +24,10 @@ import java.util.Date;
 @Accessors(chain = true)
 public class LogEvent {
 
+
+    // 主键ID
+    private Long infoId;
+
     // traceID
     private String traceId;
 
@@ -41,16 +46,17 @@ public class LogEvent {
 
     private String effectFlag;
 
-    public void generateInfo(Object req){
+    public void generateInfo(TranslatorCollect collect) {
         try {
+            Object req = collect.getReq();
+            this.infoId = collect.getInfoId();
             this.traceId = MDC.get(TraceIdHandler.TRACE_ID);
             this.timestamp = new Date();
             this.clazz = req.getClass();
             this.info = new ObjectMapper().writeValueAsString(req);
             if (req.getClass().getAnnotation(TableName.class) != null && req.getClass().getAnnotation(TableName.class).value() != null) {
                 this.tableName = req.getClass().getAnnotation(TableName.class).value();
-            }else this.tableName = req.getClass().getName().substring(req.getClass().getName().lastIndexOf(".") + 1);
-            throw new Exception("tested throws");
+            } else this.tableName = req.getClass().getName().substring(req.getClass().getName().lastIndexOf(".") + 1);
         } catch (Exception e) {
             this.effectFlag = "0";
         }

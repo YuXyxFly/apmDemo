@@ -1,8 +1,12 @@
 package cn.fly;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.TimeZone;
 
@@ -20,6 +24,11 @@ public class LogApplication {
         /* 设置本地时区 */
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
         SpringApplication.run(LogApplication.class, args);
+    }
+
+    @Bean
+    MeterRegistryCustomizer<MeterRegistry> configurer(@Value("${spring.application.name}") String applicationName){
+        return registry -> registry.config().commonTags("application", applicationName);
     }
 
 }

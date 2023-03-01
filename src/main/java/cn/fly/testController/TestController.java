@@ -4,10 +4,12 @@ import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
 import cn.fly.logDemo.infoResolver.dao.MysqlTableDao;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlTables;
+import cn.fly.testController.testReq.zkrc_zddwb;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -31,7 +33,7 @@ public class TestController {
 
     @GetMapping("/columns/{tablename}")
     public List<MysqlColumns> columnsInfoGet(@PathVariable(value = "tablename") String tablename) {
-        return this.mysqlColumnsDao.selectTableInfo(tablename);
+        return this.mysqlColumnsDao.showTableInfo(tablename, null);
     }
 
     @GetMapping("/table/{tablename}")
@@ -45,5 +47,11 @@ public class TestController {
     public MysqlColumns testXgXq(@RequestBody MysqlColumns columns, @PathVariable("tableId") String tableId) {
         return columns;
     }
+
+    @PutMapping("/zddw/{zddwid}")
+    public zkrc_zddwb testXgXq(@RequestBody zkrc_zddwb zddwb, @PathVariable("zddwid") Long zddwid) {
+        return zddwb;
+    }
+
 
 }
