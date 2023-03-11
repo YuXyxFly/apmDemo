@@ -2,12 +2,7 @@ package cn.fly.logDemo;
 
 import cn.fly.logDemo.config.SpringUtils;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
-import cn.fly.logDemo.infoResolver.dao.TableConfigMapper;
-import cn.fly.logDemo.infoResolver.dao.TableFieldConfigMapper;
-import cn.fly.logDemo.infoResolver.dao.TableFieldValueMapper;
 import cn.fly.logDemo.infoResolver.model.logTable.LogCollectedInfo;
-import cn.fly.logDemo.infoResolver.model.logTable.TableConfig;
-import cn.fly.logDemo.infoResolver.model.logTable.TableFieldConfig;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
 import cn.fly.logDemo.utils.ReflectionUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,14 +10,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.WorkHandler;
 import org.apache.logging.log4j.util.Strings;
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import java.util.TimeZone;
@@ -17,6 +18,7 @@ import java.util.TimeZone;
  */
 
 @SpringBootApplication
+@EnableConfigurationProperties
 @MapperScan("cn.fly.logDemo.infoResolver.dao")
 public class LogApplication {
 

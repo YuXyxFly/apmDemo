@@ -1,9 +1,9 @@
 package cn.fly.logDemo;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Optional;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author fly
@@ -60,8 +60,15 @@ public class PasswordTest {
         System.out.println(password16.matches(password)+ " 16");
     }
 
+
+    public void validTest(String code, String value) {
+        System.out.println(code +  value);
+    }
+
+
+
     public static void main(String[] args) {
-        System.out.println("110101001003".substring(6, 9));
+        new PasswordTest().validTest(null, " ");
     }
 
 }

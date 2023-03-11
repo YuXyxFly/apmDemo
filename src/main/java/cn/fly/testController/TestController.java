@@ -1,19 +1,31 @@
 package cn.fly.testController;
 
+import cn.fly.etcd.EtcdUtils;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
 import cn.fly.logDemo.infoResolver.dao.MysqlTableDao;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlTables;
+import cn.fly.result.AjaxResult;
+import cn.fly.testController.test.TestWatcher;
+import cn.fly.testController.test.ZookeeperTest;
 import cn.fly.testController.testReq.zkrc_zddwb;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
-import org.springframework.validation.annotation.Validated;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import io.etcd.jetcd.ByteSequence;
+import io.etcd.jetcd.Client;
+import io.etcd.jetcd.kv.GetResponse;
+import io.etcd.jetcd.options.GetOption;
+import org.apache.curator.framework.CuratorFramework;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author fly
@@ -31,27 +43,85 @@ public class TestController {
     @Resource
     MysqlTableDao mysqlTableDao;
 
+    @Resource
+    CuratorFramework zkClient;
+
+    @Resource
+    Client etcdClient;
+
+    @Resource
+    RedisTemplate redisTemplate;
+
     @GetMapping("/columns/{tablename}")
-    public List<MysqlColumns> columnsInfoGet(@PathVariable(value = "tablename") String tablename) {
-        return this.mysqlColumnsDao.showTableInfo(tablename, null);
+    public AjaxResult<List<MysqlColumns>> columnsInfoGet(@PathVariable(value = "tablename") String tablename) {
+        return AjaxResult.success(this.mysqlColumnsDao.showTableInfo(tablename, null));
     }
 
     @GetMapping("/table/{tablename}")
-    public List<MysqlTables> tableInfoGet(@PathVariable(value = "tablename") String tablename) {
+    public AjaxResult<List<MysqlTables>> tableInfoGet(@PathVariable(value = "tablename") String tablename) {
         LambdaQueryChainWrapper<MysqlTables> mysqlTablesLambdaQueryChainWrapper = ChainWrappers.lambdaQueryChain(mysqlTableDao);
         mysqlTablesLambdaQueryChainWrapper.eq(MysqlTables::getTABLE_NAME, "1");
-        return this.mysqlTableDao.selectList(new QueryWrapper<>(new MysqlTables().setTABLE_NAME(tablename)));
+        return AjaxResult.success(this.mysqlTableDao.selectList(new QueryWrapper<>(new MysqlTables().setTABLE_NAME(tablename))));
     }
 
     @PutMapping("/table/{tableId}")
-    public MysqlColumns testXgXq(@RequestBody MysqlColumns columns, @PathVariable("tableId") String tableId) {
-        return columns;
+    public AjaxResult<MysqlColumns> testXgXq(@RequestBody MysqlColumns columns, @PathVariable("tableId") String tableId) {
+        return AjaxResult.success(columns);
     }
 
     @PutMapping("/zddw/{zddwid}")
-    public zkrc_zddwb testXgXq(@RequestBody zkrc_zddwb zddwb, @PathVariable("zddwid") Long zddwid) {
-        return zddwb;
+    public AjaxResult<zkrc_zddwb> testXgXq(@RequestBody zkrc_zddwb zddwb, @PathVariable("zddwid") Long zddwid) throws JsonProcessingException {
+        return AjaxResult.success(zddwb);
     }
+
+    @GetMapping("mysql/{key}/{value}")
+    public void test(@PathVariable("key") String key, @PathVariable("value") String value) {
+        redisTemplate.delete(key);
+        mysqlColumnsDao.updateSfky(key, value);
+        redisTemplate.delete(key);
+    }
+
+    @GetMapping("mysql/{key}")
+    public AjaxResult<String> test(@PathVariable("key") String key) throws JsonProcessingException {
+        if (redisTemplate.hasKey(key)) {
+            return AjaxResult.success((String) redisTemplate.opsForValue().get(key) == null?"":(String) redisTemplate.opsForValue().get(key));
+        } else {
+            String value = mysqlColumnsDao.selectSfky(key);
+            redisTemplate.opsForValue().set(key, value);
+            return AjaxResult.success(value);
+        }
+    }
+
+    @GetMapping("zk/connect")
+    public AjaxResult<String> zkConnect() throws IOException, InterruptedException {
+        ZookeeperTest build = ZookeeperTest.ZooKeeperConnectionBuilder.build(new TestWatcher());
+        return AjaxResult.success(build.getZoo().getClientConfig().toString());
+    }
+
+    @GetMapping("zk/path")
+    public AjaxResult<List<String>> zkpath() throws Exception {
+        return AjaxResult.success(zkClient.getChildren().forPath("/ws-19834767323"));
+    }
+
+    @GetMapping("zk/path/{path}/{data}")
+    public AjaxResult<List<String>> zkpath(@PathVariable("path") String path,@PathVariable("data") String data) throws Exception {
+        zkClient.create().creatingParentsIfNeeded().forPath("/ws-19834767323/" + path, data.getBytes());
+        return AjaxResult.success();
+    }
+
+    @GetMapping("etcd/{key}/{value}")
+    public AjaxResult etcdAdd(@PathVariable("key") String key,@PathVariable("value") String value) {
+        return AjaxResult.success(etcdClient.getKVClient().put(ByteSequence.from(key, StandardCharsets.UTF_8), ByteSequence.from(value,StandardCharsets.UTF_8)));
+    }
+
+    @GetMapping("etcd/node")
+    public AjaxResult<GetResponse> etcdNodes() throws Exception {
+        // 带前缀的方式查询，注意要入参key和prefix是同一个值
+        GetOption getOption = GetOption.newBuilder().withPrefix(EtcdUtils.bytesOf("/test")).build();
+        CompletableFuture<GetResponse> getResponseCompletableFuture = etcdClient.getKVClient().get(EtcdUtils.bytesOf("/test"), getOption);
+        return AjaxResult.success(getResponseCompletableFuture.get());
+    }
+
 
 
 }

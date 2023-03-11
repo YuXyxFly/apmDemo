@@ -59,6 +59,7 @@ public class LogAspect {
             SpringUtils.getBean(LogEventProducer.class).producer(proceedingJoinPoint);
         }
         //RequestInfoHandler.resolve(request);
-        return proceedingJoinPoint.proceed();
+        Object proceed = proceedingJoinPoint.proceed();
+        return proceed;
     }
 }

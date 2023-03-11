@@ -17,4 +17,8 @@ public interface MysqlColumnsDao{
 
     List<MysqlColumns> showTableInfo(@Param("tableName") String tableName, @Param("Fields") List<String> Fields);
 
+    void updateSfky(@Param("key") String key, @Param("sfky") String sfky);
+
+    String selectSfky(@Param("key") String key);
+
 }

@@ -1,11 +1,31 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.100.100.4:3306/zkrcw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://130.10.7.227:3306/hdjypt-wy2?useSSL=false&useUnicode=true&characterEncoding=utf-8&useAffectedRows=true
     username: root
     password: 1qaz@WSX
+  redis:
+    database: 0
+    host: localhost
+    port: 6666
+    jedis:
+      pool:
+        enabled: true
+        max-active: 8
+        max-wait: 1
+        max-idle: 8
+        min-idle: 0
+    connect-timeout: 5000
   application:
     name: logDemoApplication
+
+log-demo:
+  zookeeper:
+    url: localhost:6667
+    timeout: 5000
+    retry: 10
+  etcd:
+    url: localhost:2379
 
 
 logging:

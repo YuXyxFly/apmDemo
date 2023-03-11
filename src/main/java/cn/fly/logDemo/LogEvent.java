@@ -6,7 +6,6 @@ import cn.fly.logDemo.infoResolver.model.logTable.TranslatorCollect;
 import cn.fly.logDemo.utils.DateUtils;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -57,6 +56,7 @@ public class LogEvent {
             if (req.getClass().getAnnotation(TableName.class) != null && req.getClass().getAnnotation(TableName.class).value() != null) {
                 this.tableName = req.getClass().getAnnotation(TableName.class).value();
             } else this.tableName = req.getClass().getName().substring(req.getClass().getName().lastIndexOf(".") + 1);
+            //throw new Exception("tested throws"); 测试使用
         } catch (Exception e) {
             this.effectFlag = "0";
         }

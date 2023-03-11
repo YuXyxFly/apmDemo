@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao">
+    <update id="updateSfky">
+        update hdjy_d_dwxz set sfky = #{sfky} where dmid = #{key}
+    </update>
 
     <select id="showTableInfo" resultType="cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns">
         show full columns from ${tableName}
@@ -12,5 +15,8 @@
                   </foreach>
             </if>
         </where>
+    </select>
+    <select id="selectSfky" resultType="java.lang.String">
+        select sfky from hdjy_d_dwxz where dmid = #{key}
     </select>
 </mapper>
