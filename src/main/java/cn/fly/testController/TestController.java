@@ -2,16 +2,12 @@ package cn.fly.testController;
 
 import cn.fly.etcd.EtcdUtils;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
-import cn.fly.logDemo.infoResolver.dao.MysqlTableDao;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlTables;
 import cn.fly.result.AjaxResult;
 import cn.fly.testController.test.TestWatcher;
 import cn.fly.testController.test.ZookeeperTest;
 import cn.fly.testController.testReq.zkrc_zddwb;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
-import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.etcd.jetcd.ByteSequence;
 import io.etcd.jetcd.Client;
@@ -23,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -41,9 +38,6 @@ public class TestController {
     MysqlColumnsDao mysqlColumnsDao;
 
     @Resource
-    MysqlTableDao mysqlTableDao;
-
-    @Resource
     CuratorFramework zkClient;
 
     @Resource
@@ -59,9 +53,7 @@ public class TestController {
 
     @GetMapping("/table/{tablename}")
     public AjaxResult<List<MysqlTables>> tableInfoGet(@PathVariable(value = "tablename") String tablename) {
-        LambdaQueryChainWrapper<MysqlTables> mysqlTablesLambdaQueryChainWrapper = ChainWrappers.lambdaQueryChain(mysqlTableDao);
-        mysqlTablesLambdaQueryChainWrapper.eq(MysqlTables::getTABLE_NAME, "1");
-        return AjaxResult.success(this.mysqlTableDao.selectList(new QueryWrapper<>(new MysqlTables().setTABLE_NAME(tablename))));
+        return null;
     }
 
     @PutMapping("/table/{tableId}")
@@ -120,6 +112,12 @@ public class TestController {
         GetOption getOption = GetOption.newBuilder().withPrefix(EtcdUtils.bytesOf("/test")).build();
         CompletableFuture<GetResponse> getResponseCompletableFuture = etcdClient.getKVClient().get(EtcdUtils.bytesOf("/test"), getOption);
         return AjaxResult.success(getResponseCompletableFuture.get());
+    }
+
+    @GetMapping("ip/{ip}")
+    public AjaxResult<InetAddress> ip() throws Exception {
+        InetAddress localHost = InetAddress.getLocalHost();
+        return AjaxResult.success(localHost);
     }
 
 

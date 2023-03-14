@@ -1,16 +1,18 @@
 package cn.fly.logDemo;
 
 
+import ch.qos.logback.classic.db.names.TableName;
 import cn.fly.logDemo.infoResolver.TraceIdHandler;
 import cn.fly.logDemo.infoResolver.model.logTable.TranslatorCollect;
 import cn.fly.logDemo.utils.DateUtils;
-import com.baomidou.mybatisplus.annotation.TableName;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.slf4j.MDC;
 
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -53,8 +55,8 @@ public class LogEvent {
             this.timestamp = new Date();
             this.clazz = req.getClass();
             this.info = new ObjectMapper().writeValueAsString(req);
-            if (req.getClass().getAnnotation(TableName.class) != null && req.getClass().getAnnotation(TableName.class).value() != null) {
-                this.tableName = req.getClass().getAnnotation(TableName.class).value();
+            if (req.getClass().getAnnotation(Table.class) != null && req.getClass().getAnnotation(Table.class).name() != null) {
+                this.tableName = req.getClass().getAnnotation(Table.class).name();
             } else this.tableName = req.getClass().getName().substring(req.getClass().getName().lastIndexOf(".") + 1);
             //throw new Exception("tested throws"); 测试使用
         } catch (Exception e) {

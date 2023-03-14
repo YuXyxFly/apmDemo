@@ -1,8 +1,9 @@
 package cn.fly.logDemo.infoResolver.model.mysql;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import javax.persistence.Table;
 
 /**
  * @author fly
@@ -12,7 +13,7 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-@TableName("MysqlColumnsForTableTest")
+@Table(name = "MysqlColumnsForTableTest")
 public class MysqlColumns {
 
     private String Field;

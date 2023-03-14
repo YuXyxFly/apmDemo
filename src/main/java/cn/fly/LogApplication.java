@@ -8,6 +8,7 @@ import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCusto
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.TimeZone;
 
@@ -19,6 +20,7 @@ import java.util.TimeZone;
 
 @SpringBootApplication
 @EnableConfigurationProperties
+@EnableJpaAuditing
 @MapperScan("cn.fly.logDemo.infoResolver.dao")
 public class LogApplication {
 
