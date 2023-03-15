@@ -20,6 +20,10 @@ spring:
     name: logDemoApplication
   jpa:
     show-sql: true
+  data:
+    mongodb:
+      uri: mongodb://TestInfo:root@10.100.100.4/userInfo
+
 
 
 log-demo:
@@ -34,7 +38,7 @@ log-demo:
 logging:
   config: classpath:logback-boot.xml
 server:
-  port: 9999
+  port: 9998
 
 mybatis-plus:
   configuration:

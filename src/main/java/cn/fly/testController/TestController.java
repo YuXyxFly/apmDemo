@@ -1,5 +1,7 @@
 package cn.fly.testController;
 
+import cn.fly.config.IdType;
+import cn.fly.config.WebSocketId;
 import cn.fly.etcd.EtcdUtils;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
@@ -9,11 +11,17 @@ import cn.fly.testController.test.TestWatcher;
 import cn.fly.testController.test.ZookeeperTest;
 import cn.fly.testController.testReq.zkrc_zddwb;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.etcd.jetcd.ByteSequence;
 import io.etcd.jetcd.Client;
 import io.etcd.jetcd.kv.GetResponse;
 import io.etcd.jetcd.options.GetOption;
 import org.apache.curator.framework.CuratorFramework;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +53,9 @@ public class TestController {
 
     @Resource
     RedisTemplate redisTemplate;
+
+    @Resource
+    MongoTemplate mongoTemplate;
 
     @GetMapping("/columns/{tablename}")
     public AjaxResult<List<MysqlColumns>> columnsInfoGet(@PathVariable(value = "tablename") String tablename) {
@@ -118,6 +129,25 @@ public class TestController {
     public AjaxResult<InetAddress> ip() throws Exception {
         InetAddress localHost = InetAddress.getLocalHost();
         return AjaxResult.success(localHost);
+    }
+
+    @GetMapping("mongo/add")
+    public AjaxResult<WebSocketId> mongoAdd() throws JsonProcessingException {
+        WebSocketId testObject = (WebSocketId)IdType.WEBSOCKET.getter("testForever");
+        mongoTemplate.save(testObject, "userDetails");
+        return AjaxResult.success(mongoTemplate.insert(testObject, "userDetails"));
+    }
+
+    @GetMapping("mongo")
+    public AjaxResult<WebSocketId> mongoGet() {
+        AjaxResult<WebSocketId> success = AjaxResult.success(mongoTemplate.find(Query.query(Criteria.where("username").is("testForever"))
+                .with(PageRequest.of(1, 1, Sort.by(Sort.Order.desc("date")))), WebSocketId.class, "userDetails").get(0));
+        return success;
+    }
+
+    @GetMapping("mongo/all")
+    public AjaxResult<List<WebSocketId>> mongoAll() throws JsonProcessingException {
+        return AjaxResult.success(mongoTemplate.findAll(WebSocketId.class, "userDetails"));
     }
 
 

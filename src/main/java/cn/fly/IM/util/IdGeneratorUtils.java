@@ -13,8 +13,8 @@ import java.lang.reflect.InvocationTargetException;
 public class IdGeneratorUtils {
 
     // 获取WebSocketId
-    public static String idGetter(String userName) {
-        return WebSocketId.WebSocketIdBuilder.builder(userName).getEtcdId();
+    public static WebSocketId idGetter(String userName) {
+        return WebSocketId.WebSocketIdBuilder.builder(userName);
     }
 
     // 解析WebSocketId

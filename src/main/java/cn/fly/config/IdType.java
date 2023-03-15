@@ -12,20 +12,13 @@ public enum IdType {
 
     WEBSOCKET(WebSocketId.class, "websocketID"){
         @Override
-        public String getter(String userName) {
+        public Object getter(String userName) {
             return IdGeneratorUtils.idGetter(userName);
-        }
-
-        @Override
-        public Object resolve(String value) {
-            return IdGeneratorUtils.resolve(value, WebSocketId.class);
         }
     };
 
     IdType(Class<WebSocketId> webSocketIdClass, String msg) {
     }
 
-    public abstract String getter(String userName);
-
-    public abstract Object resolve(String value);
+    public abstract Object getter(String userName);
 }

@@ -2,10 +2,11 @@ package cn.fly.logDemo.aspect;
 
 import cn.fly.logDemo.config.SpringUtils;
 import cn.fly.logDemo.infoResolver.LogEventProducer;
-import cn.fly.logDemo.infoResolver.RequestInfoHandler;
 import cn.fly.logDemo.infoResolver.TraceIdHandler;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 

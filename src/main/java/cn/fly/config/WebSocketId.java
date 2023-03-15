@@ -1,8 +1,10 @@
 package cn.fly.config;
 
+import cn.fly.logDemo.config.SpringUtils;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.ContextIdApplicationContextInitializer;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -16,25 +18,28 @@ import java.util.Date;
 
 @Getter
 @Accessors(chain = true)
+@ToString
 public class WebSocketId {
 
-    @Value("spring.application.name")
-    public String applicationName;
+    public String applicationName = "default";
 
     private String host;
 
-    @Value("log-demo.etcd.url")
     private String etcdAddr;
 
     private Date timeStamp;
 
     protected String username;
 
+    public WebSocketId() {
+    }
+
     private WebSocketId(String userName) {
         try {
             this.host = InetAddress.getLocalHost().getHostAddress();
             this.timeStamp = new Date();
             this.username = userName;
+            this.etcdAddr = SpringUtils.getBean(EtcdConfig.class).getUrl();
         } catch (UnknownHostException ignored) {
         }
     }
@@ -47,13 +52,13 @@ public class WebSocketId {
         this.username = username;
     }
 
-    public String getEtcdId() {
-        return "/" + this.applicationName + "/" + this.host + "/" +this.etcdAddr + "/" +this.timeStamp + "/" +this.username;
+    public String getStringId() {
+        return "&" + this.applicationName + "&" + this.host + "&" +this.etcdAddr + "&" +this.timeStamp.toString() + "&" +this.username;
     }
 
 
     public WebSocketId resovle(String value) {
-        String[] resolve = value.split("/");
+        String[] resolve = value.split("&");
         if (resolve.length != 5){
             return null;
         }else return new WebSocketId(resolve[0],resolve[1],resolve[2],new Date(resolve[3]),resolve[4]);
