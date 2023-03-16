@@ -38,7 +38,7 @@ log-demo:
 logging:
   config: classpath:logback-boot.xml
 server:
-  port: 9998
+  port: 9999
 
 mybatis-plus:
   configuration:

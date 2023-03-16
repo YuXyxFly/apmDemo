@@ -1,10 +1,10 @@
-package cn.fly.config;
+package cn.fly.config.id;
 
+import cn.fly.config.EtcdConfig;
 import cn.fly.logDemo.config.SpringUtils;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.springframework.boot.context.ContextIdApplicationContextInitializer;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

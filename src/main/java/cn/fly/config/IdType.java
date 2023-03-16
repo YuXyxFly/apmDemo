@@ -1,6 +1,7 @@
 package cn.fly.config;
 
 import cn.fly.IM.util.IdGeneratorUtils;
+import cn.fly.config.id.WebSocketId;
 
 /**
  * @author fly

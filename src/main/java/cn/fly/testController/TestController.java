@@ -1,8 +1,9 @@
 package cn.fly.testController;
 
 import cn.fly.config.IdType;
-import cn.fly.config.WebSocketId;
+import cn.fly.config.id.WebSocketId;
 import cn.fly.etcd.EtcdUtils;
+import cn.fly.etcd.impl.AdvancedEtcdServiceImpl;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlColumns;
 import cn.fly.logDemo.infoResolver.model.mysql.MysqlTables;
@@ -11,12 +12,16 @@ import cn.fly.testController.test.TestWatcher;
 import cn.fly.testController.test.ZookeeperTest;
 import cn.fly.testController.testReq.zkrc_zddwb;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.etcd.jetcd.ByteSequence;
 import io.etcd.jetcd.Client;
+import io.etcd.jetcd.KeyValue;
+import io.etcd.jetcd.Watch;
 import io.etcd.jetcd.kv.GetResponse;
 import io.etcd.jetcd.options.GetOption;
+import io.etcd.jetcd.watch.WatchEvent;
 import org.apache.curator.framework.CuratorFramework;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -29,8 +34,12 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author fly
@@ -41,6 +50,8 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("test")
 public class TestController {
+    
+    Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Resource
     MysqlColumnsDao mysqlColumnsDao;
@@ -56,6 +67,8 @@ public class TestController {
 
     @Resource
     MongoTemplate mongoTemplate;
+
+    private Map<String, Watch.Watcher> watcherMap = new ConcurrentHashMap<>();
 
     @GetMapping("/columns/{tablename}")
     public AjaxResult<List<MysqlColumns>> columnsInfoGet(@PathVariable(value = "tablename") String tablename) {
@@ -117,6 +130,61 @@ public class TestController {
         return AjaxResult.success(etcdClient.getKVClient().put(ByteSequence.from(key, StandardCharsets.UTF_8), ByteSequence.from(value,StandardCharsets.UTF_8)));
     }
 
+    @DeleteMapping("etcd/{key}")
+    public AjaxResult etcdDelete(@PathVariable("key") String key) {
+        return AjaxResult.success(etcdClient.getKVClient().delete(ByteSequence.from(key, StandardCharsets.UTF_8)));
+    }
+
+    @GetMapping("etcd/watcher/{key}")
+    public AjaxResult etcdWatcherAdd(@PathVariable("key") String key) throws Exception {
+        // 先检查指定的key在etcd中是否存在
+
+        // 查询条件中指定只返回key
+        GetOption getOption = GetOption.newBuilder().withCountOnly(true).build();
+        // 如果数量小于1,表示指定的key在etcd中不存在
+        if (etcdClient.getKVClient().get(ByteSequence.from(key, StandardCharsets.UTF_8), getOption).get().getCount()<1) {
+            String errorDesc = String.format("[%s] not exists", key);
+            logger.error(errorDesc);
+            return AjaxResult.failed(errorDesc + " " + new Date());
+        }
+
+        final String watchKey = key;
+
+        // 实例化一个监听对象，当监听的key发生变化时会被调用
+        Watch.Listener listener = Watch.listener(watchResponse -> {
+            logger.info("收到[{}]的事件", watchKey);
+
+            // 被调用时传入的是事件集合，这里遍历每个事件
+            watchResponse.getEvents().forEach(watchEvent -> {
+                // 操作类型
+                WatchEvent.EventType eventType = watchEvent.getEventType();
+
+                // 操作的键值对
+                KeyValue keyValue = watchEvent.getKeyValue();
+
+                logger.info("type={}, key={}, value={}",
+                        eventType,
+                        keyValue.getKey().toString(StandardCharsets.UTF_8),
+                        keyValue.getValue().toString(StandardCharsets.UTF_8));
+
+                // 如果是删除操作，就把该key的Watcher找出来close掉
+                if (WatchEvent.EventType.DELETE.equals(eventType)
+                        && watcherMap.containsKey(watchKey)) {
+                    Watch.Watcher watcher = watcherMap.remove(watchKey);
+                    watcher.close();
+                }
+            });
+        });
+
+        // 添加监听
+        Watch.Watcher watcher = new AdvancedEtcdServiceImpl().watch(watchKey, listener);
+
+        // 将这个Watcher放入内存中保存，如果该key被删除就要将这个Watcher关闭
+        watcherMap.put(key, watcher);
+
+        return AjaxResult.success("watch success " + new Date());
+    }
+
     @GetMapping("etcd/node")
     public AjaxResult<GetResponse> etcdNodes() throws Exception {
         // 带前缀的方式查询，注意要入参key和prefix是同一个值
@@ -149,6 +217,8 @@ public class TestController {
     public AjaxResult<List<WebSocketId>> mongoAll() throws JsonProcessingException {
         return AjaxResult.success(mongoTemplate.findAll(WebSocketId.class, "userDetails"));
     }
+
+
 
 
 

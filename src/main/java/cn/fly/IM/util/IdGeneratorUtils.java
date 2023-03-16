@@ -1,6 +1,6 @@
 package cn.fly.IM.util;
 
-import cn.fly.config.WebSocketId;
+import cn.fly.config.id.WebSocketId;
 
 import java.lang.reflect.InvocationTargetException;
 
