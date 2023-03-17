@@ -221,7 +221,8 @@ public class TestController {
 
     @GetMapping("kafka/topic/{key}")
     public AjaxResult<String> kafkaTopicAddKey(@PathVariable("key") String key) {
-        return AjaxResult.success(KafkaConfig)
+        //return AjaxResult.success(KafkaConfig)
+        return null;
     }
 
 
