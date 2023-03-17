@@ -19,6 +19,7 @@ import io.etcd.jetcd.Watch;
 import io.etcd.jetcd.kv.GetResponse;
 import io.etcd.jetcd.options.GetOption;
 import io.etcd.jetcd.watch.WatchEvent;
+import kafka.server.KafkaConfig;
 import org.apache.curator.framework.CuratorFramework;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -218,6 +219,10 @@ public class TestController {
         return AjaxResult.success(mongoTemplate.findAll(WebSocketId.class, "userDetails"));
     }
 
+    @GetMapping("kafka/topic/{key}")
+    public AjaxResult<String> kafkaTopicAddKey(@PathVariable("key") String key) {
+        return AjaxResult.success(KafkaConfig)
+    }
 
 
 

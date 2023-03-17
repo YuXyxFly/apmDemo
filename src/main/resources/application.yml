@@ -23,6 +23,20 @@ spring:
   data:
     mongodb:
       uri: mongodb://TestInfo:root@10.100.100.4/userInfo
+  kafka:
+    bootstrap-servers: localhost:6668
+    producer:
+      retries: 3
+      # 指定消息key和消息体的编解码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    consumer:
+#      # 指定消息key和消息体的编解码方式
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+
+
 
 
 
