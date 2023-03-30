@@ -1,0 +1,81 @@
+{
+  "groups": [
+    {
+      "name": "log-demo.canal-monitor-mysql",
+      "type": "cn.fly.config.CanalMysqlConfig",
+      "sourceType": "cn.fly.config.CanalMysqlConfig"
+    },
+    {
+      "name": "log-demo.etcd",
+      "type": "cn.fly.config.EtcdConfig",
+      "sourceType": "cn.fly.config.EtcdConfig"
+    },
+    {
+      "name": "log-demo.zookeeper",
+      "type": "cn.fly.config.ZkConfig",
+      "sourceType": "cn.fly.config.ZkConfig"
+    },
+    {
+      "name": "management.endpoint.demo",
+      "type": "cn.fly.grafana.endpoint.DemoEndPoint",
+      "sourceType": "cn.fly.grafana.endpoint.DemoEndPoint"
+    }
+  ],
+  "properties": [
+    {
+      "name": "log-demo.canal-monitor-mysql.host",
+      "type": "java.lang.String",
+      "sourceType": "cn.fly.config.CanalMysqlConfig"
+    },
+    {
+      "name": "log-demo.canal-monitor-mysql.port",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.fly.config.CanalMysqlConfig"
+    },
+    {
+      "name": "log-demo.canal-monitor-mysql.table-name",
+      "type": "java.lang.String",
+      "sourceType": "cn.fly.config.CanalMysqlConfig"
+    },
+    {
+      "name": "log-demo.etcd.url",
+      "type": "java.lang.String",
+      "sourceType": "cn.fly.config.EtcdConfig"
+    },
+    {
+      "name": "log-demo.zookeeper.retry",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.fly.config.ZkConfig"
+    },
+    {
+      "name": "log-demo.zookeeper.test",
+      "type": "java.lang.Boolean",
+      "sourceType": "cn.fly.config.ZkConfig"
+    },
+    {
+      "name": "log-demo.zookeeper.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.fly.config.ZkConfig"
+    },
+    {
+      "name": "log-demo.zookeeper.url",
+      "type": "java.lang.String",
+      "sourceType": "cn.fly.config.ZkConfig"
+    },
+    {
+      "name": "management.endpoint.demo.cache.time-to-live",
+      "type": "java.time.Duration",
+      "description": "Maximum time that a response can be cached.",
+      "sourceType": "cn.fly.grafana.endpoint.DemoEndPoint",
+      "defaultValue": "0ms"
+    },
+    {
+      "name": "management.endpoint.demo.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable the demo endpoint.",
+      "sourceType": "cn.fly.grafana.endpoint.DemoEndPoint",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}

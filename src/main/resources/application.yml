@@ -47,6 +47,10 @@ log-demo:
     retry: 10
   etcd:
     url: localhost:2379
+  canal-monitor-mysql:
+    host: 130.10.7.157
+    port: 11111
+    tableName: zkrc_zph_bqjlb
 
 
 logging:

@@ -68,7 +68,11 @@ public class PasswordTest {
 
 
     public static void main(String[] args) {
-        new PasswordTest().validTest(null, " ");
+        String s = "im:yhid:123123123123";
+        System.out.println(s.substring(8));
+
+
+        //new PasswordTest().validTest(null, " ");
     }
 
 }

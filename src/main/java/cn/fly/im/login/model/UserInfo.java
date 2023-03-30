@@ -1,4 +1,4 @@
-package cn.fly.IM.login.model;
+package cn.fly.im.login.model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

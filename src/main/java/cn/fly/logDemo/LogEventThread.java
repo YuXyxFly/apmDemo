@@ -1,5 +1,7 @@
 package cn.fly.logDemo;
 
+import cn.fly.canal.disruptor.CanalEventHandler;
+import cn.fly.canal.model.CanalEventData;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import org.slf4j.Logger;
@@ -18,7 +20,7 @@ import java.util.concurrent.Executors;
 
 public class LogEventThread {
 
-    private Disruptor<LogEvent> disruptor;
+    private Disruptor<CanalEventData> disruptor;
 
     Logger logger = LoggerFactory.getLogger(LogEventThread.class);
 
@@ -31,12 +33,12 @@ public class LogEventThread {
         int bufferSize = 1024;
 
         // Construct the Disruptor
-        this.disruptor = new Disruptor<>(LogEvent::new, bufferSize, executor);
+        this.disruptor = new Disruptor<>(CanalEventData::new, bufferSize, executor);
 
         // 创建10个消费者来处理同一个生产者发的消息(这10个消费者不重复消费消息)
-        LogEventHandler[] consumers = new LogEventHandler[10];
+        CanalEventHandler[] consumers = new CanalEventHandler[10];
         for (int i = 0; i < consumers.length; i++) {
-            consumers[i] = new LogEventHandler();
+            consumers[i] = new CanalEventHandler();
         }
         disruptor.handleEventsWithWorkerPool(consumers);
 
@@ -60,7 +62,7 @@ public class LogEventThread {
         //}
     }
 
-    public Disruptor<LogEvent> getDisruptor() {
+    public Disruptor<CanalEventData> getDisruptor() {
         return disruptor;
     }
 }

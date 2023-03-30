@@ -1,4 +1,4 @@
-package cn.fly.IM.util;
+package cn.fly.im.util;
 
 import cn.fly.config.id.WebSocketId;
 

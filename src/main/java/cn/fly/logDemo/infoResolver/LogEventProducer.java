@@ -19,10 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogEventProducer {
 
-    private final RingBuffer<LogEvent> ringBuffer;
+    private RingBuffer<LogEvent> ringBuffer;
 
     public LogEventProducer() {
-        this.ringBuffer = new LogEventThread().getDisruptor().getRingBuffer();
+        //this.ringBuffer = new LogEventThread().getDisruptor().getRingBuffer();\
     }
 
     private static final EventTranslatorOneArg<LogEvent, TranslatorCollect> TRANSLATOR = (event, sequence, collect) -> event.generateInfo(collect);
