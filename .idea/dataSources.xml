@@ -9,11 +9,11 @@
       <jdbc-url>jdbc:mysql://130.10.7.227:3306/hdjypt-wy2?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useAffectedRows=true</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="admin@10.100.100.4" uuid="ccf56b9f-c174-4587-98eb-9d784279e2c2">
+    <data-source source="LOCAL" name="130.10.7.252" uuid="ccf56b9f-c174-4587-98eb-9d784279e2c2">
       <driver-ref>mongo</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
-      <jdbc-url>mongodb://10.100.100.4:27017/admin</jdbc-url>
+      <jdbc-url>mongodb://130.10.7.252:27017/userDetails</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
