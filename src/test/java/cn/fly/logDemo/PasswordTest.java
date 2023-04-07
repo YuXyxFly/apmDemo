@@ -1,9 +1,13 @@
 package cn.fly.logDemo;
 
+import org.apache.curator.shaded.com.google.common.base.Preconditions;
+import org.apache.curator.shaded.com.google.common.base.Strings;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author fly
@@ -68,12 +72,13 @@ public class PasswordTest {
 
 
     public static void main(String[] args) {
-        String s = "im:yhid:123123123123";
-        System.out.println(s.substring(8));
-
-
-        //new PasswordTest().validTest(null, " ");
+        Preconditions.checkArgument(
+                String.class.isInstance(Object.class),
+                String.valueOf(Boolean.class.isInstance(Object.class)),
+                Strings.isNullOrEmpty("")
+        );
     }
+
 
 }
 

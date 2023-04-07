@@ -288,6 +288,20 @@
             </exclusions>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>3.0.5</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/io.protostuff/protostuff-core -->
         <dependency>
             <groupId>io.protostuff</groupId>
