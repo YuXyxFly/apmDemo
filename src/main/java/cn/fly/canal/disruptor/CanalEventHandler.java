@@ -1,6 +1,7 @@
 package cn.fly.canal.disruptor;
 
 import cn.fly.canal.model.CanalEventData;
+import cn.fly.canal.recommendation.RecommendationType;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.WorkHandler;
 import org.slf4j.Logger;
@@ -25,8 +26,7 @@ public class CanalEventHandler implements WorkHandler<CanalEventData> {
     @Override
     public void onEvent(CanalEventData event) throws Exception {
         // canal -- disruptor.consumer -- kafka -- flink -- ES
-
-
+        RecommendationType.RecommendationTypeBuilder.builder(event.getTableSchema()).recommendationKafkaProducer(event.getRowInfo());
         logger.info("以消费" + event.getTableSchema());
     }
 }

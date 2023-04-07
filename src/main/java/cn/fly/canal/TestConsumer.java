@@ -47,7 +47,7 @@ public class TestConsumer {
                 connector.connect();
                 logger.info("init canal connection successfully, " + canalMysqlConfig.getHost() + ":" + canalMysqlConfig.getPort());
                 //订阅数据库表,全部表q
-                connector.subscribe( ".*\\..*");
+                //connector.subscribe( ".*\\..*");
                 //回滚到未进行ack的地方，下次fetch的时候，可以从最后一个没有ack的地方开始拿
                 connector.rollback();
                 while(true) {

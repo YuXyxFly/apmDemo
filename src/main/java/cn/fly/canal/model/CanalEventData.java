@@ -28,7 +28,6 @@ public class CanalEventData {
     private Date timeStamp;
 
     public void generateFieldInfo(CanalTransformData rowChange) {
-        System.out.println("处理中!");
         this.rowInfo = rowChange.getRowInfo();
         this.tableSchema = rowChange.getTableName();
         this.timeStamp = rowChange.getTimeStamp();
