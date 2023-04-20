@@ -2,6 +2,7 @@ package cn.fly.canal.recommendation;
 
 import cn.fly.logDemo.config.SpringUtils;
 import com.alibaba.otter.canal.protocol.CanalEntry;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * @author fly
@@ -14,14 +15,20 @@ public enum RecommendationType {
     User("UserInfo"){
         @Override
         public void recommendationKafkaProducer(CanalEntry.RowChange rowChange) {
-            SpringUtils.getBean(UserInfoKafkaProducer.class).userProducer(rowChange);
+            try {
+                SpringUtils.getBean(UserInfoKafkaProducer.class).userProducer(rowChange);
+            } catch (JsonProcessingException ignore) {
+            }
         }
     },
 
     Job("JobInfo"){
         @Override
         public void recommendationKafkaProducer(CanalEntry.RowChange rowChange) {
-            SpringUtils.getBean(JobInfoKafkaProducer.class).jobProducer(rowChange);
+            try {
+                SpringUtils.getBean(JobInfoKafkaProducer.class).jobProducer(rowChange);
+            } catch (JsonProcessingException ignore) {
+            }
         }
     },
 

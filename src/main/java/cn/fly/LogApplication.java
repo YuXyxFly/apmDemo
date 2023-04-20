@@ -21,7 +21,7 @@ import java.util.TimeZone;
 @SpringBootApplication
 @EnableConfigurationProperties
 @EnableJpaAuditing
-@MapperScan("cn.fly.logDemo.infoResolver.dao")
+@MapperScan({"cn.fly.logDemo.infoResolver.dao", "cn.fly.testController.test.dao"})
 public class LogApplication {
 
     public static void main(String[] args) {

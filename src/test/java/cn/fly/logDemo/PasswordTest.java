@@ -1,13 +1,11 @@
 package cn.fly.logDemo;
 
+import cn.hutool.jwt.JWTUtil;
 import org.apache.curator.shaded.com.google.common.base.Preconditions;
-import org.apache.curator.shaded.com.google.common.base.Strings;
-import org.springframework.validation.annotation.Validated;
+import org.apache.logging.log4j.util.Strings;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * @author fly
@@ -70,13 +68,26 @@ public class PasswordTest {
     }
 
 
+    static ThreadLocal<String> as = new ThreadLocal<>();
+
 
     public static void main(String[] args) {
-        Preconditions.checkArgument(
-                String.class.isInstance(Object.class),
-                String.valueOf(Boolean.class.isInstance(Object.class)),
-                Strings.isNullOrEmpty("")
-        );
+        testSwitch(1);
+    }
+
+
+    public static void testSwitch(Object o) {
+        switch (o) {
+            case null -> System.out.println("This is Null!");
+            case Integer ignored -> System.out.println("This is Integer!");
+            default -> System.out.println("There is nothing!");
+        }
+
+
+        HashMap<Object, Object> test = new HashMap<>();
+        test.put(1,2);
+
+        as.set("1");
     }
 
 

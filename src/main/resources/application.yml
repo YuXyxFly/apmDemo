@@ -1,6 +1,9 @@
+server:
+  port: 9999
+
 spring:
   datasource:
-    url: jdbc:mysql://10.100.100.4:3306/zkrcw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://130.10.7.252:3306/zkrcw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: root
     password: 1qaz@WSX
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -38,7 +41,6 @@ spring:
 
 
 
-
 log-demo:
   zookeeper:
     url: localhost:6667
@@ -54,8 +56,6 @@ log-demo:
 
 logging:
   config: classpath:logback-boot.xml
-server:
-  port: 9999
 
 mybatis-plus:
   configuration:

@@ -77,7 +77,7 @@
     <logger name="cn.fly.logDemo.infoResolver.dao" level="DEBUG"/>
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
     <!-- 控制台输出日志级别 -->
-    <root level="INFO">
+    <root level="debug">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
 <!--        <appender-ref ref="LOGSTASH"/>-->

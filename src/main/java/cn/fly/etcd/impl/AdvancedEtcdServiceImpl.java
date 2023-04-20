@@ -1,6 +1,5 @@
 package cn.fly.etcd.impl;
 
-import cn.fly.config.ZkConfig;
 import cn.fly.etcd.AdvancedEtcdService;
 import cn.fly.logDemo.config.SpringUtils;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
