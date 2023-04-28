@@ -29,7 +29,6 @@ import java.util.List;
  * @description
  */
 
-@Component
 public class TestConsumer {
     @Resource
     CanalMysqlConfig canalMysqlConfig;

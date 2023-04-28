@@ -38,7 +38,7 @@ public class ZkConfig {
                 SpringUtils.getBean(ZkConfig.class).getUrl(),
                 new RetryNTimes(retry, timeout)
         );
-        client.start();
+        //client.start();
         logger.info("Zookeeper Connect init Success! client: " + url);
         return client;
     }

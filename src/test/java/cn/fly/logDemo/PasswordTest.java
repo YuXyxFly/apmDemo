@@ -72,22 +72,16 @@ public class PasswordTest {
 
 
     public static void main(String[] args) {
-        testSwitch(1);
+        int x=3;
+        int y=~x;
+
+        System.out.println(x);
+        System.out.println(y);
     }
 
 
     public static void testSwitch(Object o) {
-        switch (o) {
-            case null -> System.out.println("This is Null!");
-            case Integer ignored -> System.out.println("This is Integer!");
-            default -> System.out.println("There is nothing!");
-        }
 
-
-        HashMap<Object, Object> test = new HashMap<>();
-        test.put(1,2);
-
-        as.set("1");
     }
 
 

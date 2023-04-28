@@ -1,7 +1,5 @@
 package cn.fly.testController;
 
-import cn.fly.config.IdType;
-import cn.fly.config.id.WebSocketId;
 import cn.fly.etcd.EtcdUtils;
 import cn.fly.etcd.impl.AdvancedEtcdServiceImpl;
 import cn.fly.logDemo.infoResolver.dao.MysqlColumnsDao;
@@ -22,11 +20,6 @@ import io.etcd.jetcd.watch.WatchEvent;
 import org.apache.curator.framework.CuratorFramework;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +27,9 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -62,8 +57,8 @@ public class TestController {
     @Resource
     RedisTemplate redisTemplate;
 
-    @Resource
-    MongoTemplate mongoTemplate;
+    //@Resource
+    //MongoTemplate mongoTemplate;
 
     private Map<String, Watch.Watcher> watcherMap = new ConcurrentHashMap<>();
 
@@ -196,24 +191,24 @@ public class TestController {
         return AjaxResult.success(localHost);
     }
 
-    @GetMapping("mongo/add")
-    public AjaxResult<WebSocketId> mongoAdd() throws JsonProcessingException {
-        WebSocketId testObject = (WebSocketId)IdType.WEBSOCKET.getter("testForever");
-        mongoTemplate.save(testObject, "userDetails");
-        return AjaxResult.success(mongoTemplate.insert(testObject, "userDetails"));
-    }
+    //@GetMapping("mongo/add")
+    //public AjaxResult<WebSocketId> mongoAdd() throws JsonProcessingException {
+    //    WebSocketId testObject = (WebSocketId)IdType.WEBSOCKET.getter("testForever");
+    //    mongoTemplate.save(testObject, "userDetails");
+    //    return AjaxResult.success(mongoTemplate.insert(testObject, "userDetails"));
+    //}
 
-    @GetMapping("mongo")
-    public AjaxResult<WebSocketId> mongoGet() {
-        AjaxResult<WebSocketId> success = AjaxResult.success(mongoTemplate.find(Query.query(Criteria.where("username").is("testForever"))
-                .with(PageRequest.of(1, 1, Sort.by(Sort.Order.desc("date")))), WebSocketId.class, "userDetails").get(0));
-        return success;
-    }
-
-    @GetMapping("mongo/all")
-    public AjaxResult<List<WebSocketId>> mongoAll() throws JsonProcessingException {
-        return AjaxResult.success(mongoTemplate.findAll(WebSocketId.class, "userDetails"));
-    }
+    //@GetMapping("mongo")
+    //public AjaxResult<WebSocketId> mongoGet() {
+    //    AjaxResult<WebSocketId> success = AjaxResult.success(mongoTemplate.find(Query.query(Criteria.where("username").is("testForever"))
+    //            .with(PageRequest.of(1, 1, Sort.by(Sort.Order.desc("date")))), WebSocketId.class, "userDetails").get(0));
+    //    return success;
+    //}
+    //
+    //@GetMapping("mongo/all")
+    //public AjaxResult<List<WebSocketId>> mongoAll() throws JsonProcessingException {
+    //    return AjaxResult.success(mongoTemplate.findAll(WebSocketId.class, "userDetails"));
+    //}
 
     @GetMapping("kafka/topic/{key}")
     public AjaxResult<String> kafkaTopicAddKey(@PathVariable("key") String key) {

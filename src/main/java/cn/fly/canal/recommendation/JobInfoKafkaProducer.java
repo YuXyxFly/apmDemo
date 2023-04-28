@@ -4,8 +4,8 @@ import cn.fly.canal.baseInfo.Job;
 import com.alibaba.otter.canal.protocol.CanalEntry;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kafka.Kafka;
-import org.springframework.kafka.core.KafkaTemplate;
+//import kafka.Kafka;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,13 +16,13 @@ import javax.annotation.Resource;
  * @description
  */
 
-@Component
+//@Component
 public class JobInfoKafkaProducer {
 
     private static final String JOB_TOPIC = "jobInfo";
-
-    @Resource
-    KafkaTemplate<String, String> kafkaTemplate;
+    //
+    //@Resource
+    //KafkaTemplate<String, String> kafkaTemplate;
 
 
     public void jobProducer(CanalEntry.RowChange rowChange) throws JsonProcessingException {
@@ -32,6 +32,6 @@ public class JobInfoKafkaProducer {
                 .setWorkExperience(Integer.parseInt(rowChange.getRowDatas(0).getAfterColumns(2).getValue()))
                 .setDegree(Integer.parseInt(rowChange.getRowDatas(0).getAfterColumns(3).getValue()));
         System.out.println(job);
-        kafkaTemplate.send(JOB_TOPIC, new ObjectMapper().writeValueAsString(job));
+        //kafkaTemplate.send(JOB_TOPIC, new ObjectMapper().writeValueAsString(job));
     }
 }

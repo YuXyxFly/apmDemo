@@ -1,5 +1,6 @@
 package cn.fly.testController;
 
+import cn.fly.config.IdType;
 import cn.fly.result.AjaxResult;
 import cn.fly.testController.test.dao.YhbBaseMapper;
 import cn.fly.testController.test.pojo.Zkrc_yhb;
